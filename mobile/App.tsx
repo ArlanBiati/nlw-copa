@@ -7,11 +7,15 @@ import {
   Roboto_700Bold,
 } from '@expo-google-fonts/roboto';
 
+import { AuthContextProvider } from './src/contexts/AuthContext';
+
 import { Loading } from './src/components/Loading';
 import { SignIn } from './src/screens/SignIn';
+import { NewPool } from './src/screens/NewPool';
+import { Find } from './src/screens/Find';
+import { Pools } from './src/screens/Pools';
 
 import { THEME } from './src/styles/theme';
-import { AuthContextProvider } from './src/contexts/AuthContext';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -28,7 +32,7 @@ export default function App() {
           backgroundColor="transparent"
           translucent
         />
-        {fontsLoaded ? <SignIn /> : <Loading />}
+        {fontsLoaded ? <Pools /> : <Loading />}
       </AuthContextProvider>
     </NativeBaseProvider>
   );
